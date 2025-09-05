@@ -22,7 +22,7 @@ export default function Footer() {
       {/* <div className="absolute -top-16 w-72 h-72 rounded-full bg-amber-500/10 blur-3xl" /> */}
 
       {/* Branding */}
-      <h2 className="text-xl font-bold tracking-wide text-amber-400 drop-shadow-[0_0_6px_rgba(255,191,0,0.5)]">
+      <h2 className="text-xl font-bold tracking-wide text-primary ">
         Abdul Haseeb
       </h2>
 
@@ -34,8 +34,8 @@ export default function Footer() {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full border border-neutral-700/40 bg-neutral-900/50 
-                       hover:border-amber-400/60 hover:text-amber-300 hover:scale-110 
+            className="p-2 rounded-full border border-neutral-700/40  
+                       hover:border-primary/60 hover:text-primary hover:scale-110 
                        transition-all duration-300"
             aria-label={label}
           >

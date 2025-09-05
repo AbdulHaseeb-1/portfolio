@@ -1,55 +1,73 @@
-import { Github, Linkedin, Twitter, Instagram, Mail } from "lucide-react";
+import { Linkedin, Instagram, Mail, Minimize2 } from "lucide-react";
 import { motion } from "framer-motion";
+import { FaWhatsapp, FaDiscord } from "react-icons/fa";
+import { useExpanded } from "@/contexts/expand-provider";
 
 const socials = [
   {
-    name: "GitHub",
-    url: "https://github.com/yourusername",
-    icon: Github,
-    color: "hover:border-purple-500 hover:text-purple-400",
-  },
-  {
-    name: "LinkedIn",
-    url: "https://linkedin.com/in/yourusername",
-    icon: Linkedin,
-    color: "hover:border-blue-500 hover:text-blue-400",
-  },
-  {
-    name: "Twitter",
-    url: "https://twitter.com/yourusername",
-    icon: Twitter,
-    color: "hover:border-sky-500 hover:text-sky-400",
+    name: "WhatsApp",
+    url: "https://wa.me/923001234567",
+    icon: FaWhatsapp,
+    color:
+      "hover:bg-green-500/10 hover:text-green-600 dark:hover:text-green-400 hover:shadow-[0_0_15px_rgba(34,197,94,0.4)]",
   },
   {
     name: "Instagram",
     url: "https://instagram.com/yourusername",
     icon: Instagram,
-    color: "hover:border-pink-500 hover:text-pink-400",
+    color:
+      "hover:bg-pink-500/10 hover:text-pink-600 dark:hover:text-pink-400 hover:shadow-[0_0_15px_rgba(236,72,153,0.4)]",
+  },
+  {
+    name: "Discord",
+    url: "https://discord.gg/yourinvite",
+    icon: FaDiscord,
+    color:
+      "hover:bg-indigo-500/10 hover:text-indigo-600 dark:hover:text-indigo-400 hover:shadow-[0_0_15px_rgba(99,102,241,0.4)]",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://linkedin.com/in/yourusername",
+    icon: Linkedin,
+    color:
+      "hover:bg-blue-500/10 hover:text-blue-600 dark:hover:text-blue-400 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]",
   },
   {
     name: "Email",
     url: "mailto:youremail@example.com",
     icon: Mail,
-    color: "hover:border-amber-500 hover:text-amber-400",
+    color:
+      "hover:bg-amber-500/10 hover:text-amber-600 dark:hover:text-amber-400 hover:shadow-[0_0_15px_rgba(251,191,36,0.4)]",
   },
 ];
 
-export default function SocialDetails() {
+export default function SocialDetails({ index }: { index: number }) {
+  const { collapse, expanded } = useExpanded();
   return (
-    <section className="py-12 bg-neutral-950 text-white">
-      <div className="max-w-3xl mx-auto px-6">
-        {/* Heading */}
-        <div className="mb-8 text-center">
-          <h2 className="text-3xl font-bold">
-            <span className="text-amber-400">Social</span>
-          </h2>
-          <p className="mt-2 text-neutral-400">
+    <section className="py-12  bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-white transition-colors">
+      <div className="container   px-6 space-y-10">
+        <div>
+          <div className="flex gap-4">
+            <h2 className="text-3xl font-semibold mb-2 flex justify-between w-full items-center">
+              <span>Social</span>
+              {!expanded && (
+                <span
+                  onClick={() => {
+                    collapse(index);
+                  }}
+                >
+                  <Minimize2 />
+                </span>
+              )}
+            </h2>
+          </div>
+          <p className="text-neutral-600 dark:text-neutral-400 text-sm">
             Find me across the web
           </p>
         </div>
 
         {/* Social cards */}
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
           {socials.map((s, i) => {
             const Icon = s.icon;
             return (
@@ -60,14 +78,21 @@ export default function SocialDetails() {
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: i * 0.1 }}
-                className={`flex items-center gap-4 p-4 rounded-xl border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm transition ${s.color}`}
+                className={`flex items-center gap-4 p-4 rounded-xl border 
+                border-neutral-200 dark:border-neutral-800 
+                bg-white/70 dark:bg-neutral-900/50 
+                backdrop-blur-sm transition ${s.color}`}
               >
                 <Icon className="w-6 h-6" />
                 <div>
                   <p className="font-medium">{s.name}</p>
-                  <p className="text-xs text-neutral-500 truncate">{s.url}</p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 truncate">
+                    {s.url}
+                  </p>
                 </div>
               </motion.a>
             );

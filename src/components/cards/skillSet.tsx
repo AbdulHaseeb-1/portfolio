@@ -14,6 +14,8 @@ import {
   SquareStack,
   // LucideIcon,
 } from "lucide-react";
+import clsx from "clsx";
+import { colorScheme } from "@/lib/styles";
 
 /**
  * Performance notes:
@@ -25,8 +27,8 @@ import {
  */
 
 type SkillSetCardProps = {
-  size?: number;    // overall graphic size (px). default 180
-  radius?: number;  // orbit radius (px). default 70
+  size?: number; // overall graphic size (px). default 180
+  radius?: number; // orbit radius (px). default 70
   titleLeft?: React.ReactNode;
 };
 
@@ -43,12 +45,18 @@ const ICONS = [
   Layers,
 ];
 
-const IconBadge = memo(function IconBadge({ Icon }: { Icon: React.ElementType }) {
+const IconBadge = memo(function IconBadge({
+  Icon,
+}: {
+  Icon: React.ElementType;
+}) {
   return (
-    <div className="p-1.5 rounded-md bg-neutral-800/30 border border-neutral-700/30
-                    group-hover:border-primary/30 transition-colors
-                    pointer-events-none">
-      <Icon className="h-3.5 w-3.5 text-neutral-400 group-hover:text-primary/90 transition-colors" />
+    <div
+      className={clsx(
+        "p-1.5 rounded-md  group-hover:border-primary/30 transition-colors pointer-events-none"
+      )}
+    >
+      <Icon className="h-3.5 w-3.5 text-neutral-500 dark:text-neutral-400 group-hover:text-primary/90 dark:group-hover:text-primary/90 transition-colors " />
     </div>
   );
 });
@@ -81,7 +89,7 @@ export default function SkillSetCard({
           y1={center}
           x2={p.x}
           y2={p.y}
-          className="stroke-white/10 group-hover:stroke-primary/40 transition-colors"
+          className="stroke-black/10 dark:stroke-white/30 group-hover:stroke-primary/40 dark:group-hover:stroke-primary/40 transition-colors"
           strokeWidth="1"
         />
       )),
@@ -112,22 +120,25 @@ export default function SkillSetCard({
 
   return (
     <div
-      className="relative w-full h-48 lg:h-56 flex items-center justify-between
-                 rounded-2xl border 
-                 transition-transform duration-300 group
-                 hover:scale-[1.01] hover:border-primary/30
-                 overflow-hidden px-5
-                 will-change-transform contain-layout contain-paint"
+      className={clsx(
+        "relative w-full h-48 lg:h-56 flex items-center justify-between",
+        " rounded-2xl border  transition-transform duration-300 group",
+        " hover:scale-[1.01] hover:border-primary/30 overflow-hidden px-5 will-change-transform contain-layout contain-paint",
+        colorScheme.dark.background,
+        colorScheme.light.background
+      )}
     >
       {/* Left: Text */}
       <div className="flex-1 h-full py-6 flex justify-end flex-col select-none gap-2">
-       <p className="text-[10px] sm:text-xs text-neutral-500">{"Tech I know about"}</p>
-         {titleLeft ? (
+        <p className="text-[10px] sm:text-xs text-neutral-500">
+          {"Tech I know about"}
+        </p>
+        {titleLeft ? (
           titleLeft
         ) : (
           <h2 className="text-3xl font-medium leading-tight">
             <span className="text-primary">Skill</span>
-            <span className="text-white ml-2">Set</span>
+            <span className="text-primary-foreground ml-2">Set</span>
           </h2>
         )}
       </div>
@@ -139,7 +150,7 @@ export default function SkillSetCard({
       >
         {/* SVG Lines */}
         <svg
-          className="absolute inset-0 w-full h-full pointer-events-none"
+          className="absolute inset-0 w-full h-full pointer-events-none "
           viewBox={`0 0 ${size} ${size}`}
           aria-hidden
         >
@@ -153,15 +164,13 @@ export default function SkillSetCard({
 
         {/* Center Brain */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex items-center justify-center p-2 rounded-full
-                          bg-neutral-900 border border-neutral-700/50">
-            <Brain className="h-6 w-6 text-primary" />
+          <div className="flex items-center justify-center p-2 rounded-full">
+            <Brain className="h-6 w-6 text-primary bg-neutral-200 dark:bg-black rounded-full " />
           </div>
         </div>
       </div>
 
-         <SquareStack className="absolute bottom-3 right-3 h-4 w-4 sm:h-5 sm:w-5 text-neutral-500 group-hover:text-primary transition-colors" />
-
+      <SquareStack className="absolute bottom-3 right-3 h-4 w-4 sm:h-5 sm:w-5 text-neutral-500 group-hover:text-primary transition-colors" />
 
       {/* Optional: subtle spin on hover handled by GPU, not React */}
       <style>{`

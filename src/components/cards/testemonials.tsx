@@ -1,5 +1,7 @@
 import { MessageCircleReply, SquareStack } from "lucide-react";
 import { motion } from "framer-motion";
+import clsx from "clsx";
+import { colorScheme } from "@/lib/styles";
 type InfoCardProps = {
   title?: string;
   subtitle?: string;
@@ -14,9 +16,7 @@ export default function TestemonialsCard({
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="relative border hover:border-primary/30  bg-gradient-to-br from-neutral-950/80 via-black/70 to-neutral-900/80 rounded-lg 
-      p-4 sm:p-6  flex flex-col justify-between 
-       w-full h-full transition hover:shadow-lg transition-none group"
+      className={clsx("relative border hover:border-primary/30   rounded-lg  p-4 sm:p-6  flex flex-col justify-between w-full h-full transition hover:shadow-lg transition-none group",colorScheme.dark.background,colorScheme.light.background)}
     >
       {/* Top line + icon */}
       <div className="absolute w-[80%] flex items-center top-3 left-0">

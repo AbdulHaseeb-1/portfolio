@@ -1,5 +1,7 @@
 import { Sparkles, SquareStack } from "lucide-react";
 import { motion } from "framer-motion";
+import clsx from "clsx";
+import { colorScheme } from "@/lib/styles";
 
 type InfoCardProps = {
   title?: string;
@@ -15,9 +17,9 @@ export default function SocialCard({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="relative border hover:border-primary/30 bg-gradient-to-br from-neutral-950/80 via-black/70 to-neutral-900/80 
-        rounded-lg p-4 sm:p-6 text-white flex flex-col justify-between 
-        w-full h-full overflow-hidden transition hover:shadow-lg group"
+      className={clsx("relative border hover:border-primary/30 ",
+       " rounded-lg p-4 sm:p-6 text-white flex flex-col justify-between ",
+       " w-full h-full overflow-hidden transition hover:shadow-lg group",colorScheme.dark.background, colorScheme.light.background)}
     >
       {/* Top line + icon */}
       <div dir="rtl" className="absolute w-[80%] flex items-center top-3 right-0">
@@ -33,7 +35,7 @@ export default function SocialCard({
       {/* Text content */}
       <div className="flex flex-col justify-end h-full gap-1 relative z-10">
         <p className="text-[10px] sm:text-xs text-neutral-500">{subtitle}</p>
-        <h2 className="text-xl md:text-3xl font-normal leading-tight">
+        <h2 className="text-xl md:text-3xl font-normal leading-tight text-primary-foreground">
           {title}
         </h2>
       </div>

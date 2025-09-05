@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import Items from "@/store/grid-data.json";
+import Items from "@/store/grid-data";
 import EducationCard from "./cards/educaton";
 import EducationDetails from "./cards/details/education";
 import ProfileCard from "./cards/profile";
@@ -17,10 +17,13 @@ import TestimonialsDetails from "./cards/details/testimonials";
 import SocialDetails from "./cards/details/social";
 import ContactDetails from "./cards/details/contact";
 import { useUI } from "@/contexts/ui-provider";
+import { useExpanded } from "@/contexts/expand-provider";
+
+// ... imports of cards same as before ...
 
 export default function MainGrid() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const { expanded,animations } = useUI();
+  const { animations } = useUI();
+  const { activeIndices, expand, expanded } = useExpanded();
 
   const componentMap: Record<string, React.ElementType> = {
     ProfileCard,
@@ -41,14 +44,10 @@ export default function MainGrid() {
   };
 
   return (
-    <div className="max-w-7xl m-auto py-3 px-2 md:px-4 flex flex-col gap-2">
-      {/* Expand All toggle button */}
-      <div className="flex justify-end mb-2">
-      </div>
-
+    <div className="max-w-7xl m-auto py-3 px-2 md:px-4 flex flex-col gap-2 ">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 w-full">
-        {Items.firstRow.map((item, index: number) => {
-          const isActive = expanded ? true : activeIndex === index; // 🔥 override if expandAll is on
+        {Items.grid.map((item, index: number) => {
+          const isActive = expanded ? true : activeIndices.includes(index);
 
           const Comp =
             componentMap[isActive ? item.data.expanded : item.data.normal];
@@ -57,10 +56,11 @@ export default function MainGrid() {
             <motion.div
               layout={animations && item.clickable}
               transition={{ duration: 0.5 }}
-              onClick={() =>
-                !expanded && // disable individual clicks if expandAll is active
-                setActiveIndex(isActive ? null : index)
-              }
+              onClick={() => {
+                if (!expanded && !isActive && item.clickable) {
+                  expand(index);
+                }
+              }}
               key={index}
               className={
                 item.clickable
@@ -70,7 +70,7 @@ export default function MainGrid() {
                   : item.styles.normal
               }
             >
-              {Comp ? <Comp /> : <div>Component not found</div>}
+              {Comp ? <Comp index={index} /> : <div>Component not found</div>}
             </motion.div>
           );
         })}
