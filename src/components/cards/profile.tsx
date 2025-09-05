@@ -24,7 +24,7 @@ export default function ProfileCard({
   tagline = "Ideas → Systems → Impact",
   image = "/image-2.png",
 }: ProfileCardProps) {
-  const { collapse, expanded } = useExpanded();
+  const { collapse } = useExpanded();
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
