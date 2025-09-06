@@ -205,7 +205,7 @@ export default function ContactDetails({ index }: { index: number }) {
 
   return (
     <section className="bg-neutral-50 text-neutral-900 dark:bg-black dark:text-neutral-100">
-      <div className="container space-y-10 p-6">
+      <div className="container space-y-10 ">
         {/* Heading */}
         <div className="">
           <div className="flex gap-4">
