@@ -76,7 +76,7 @@ export default {
       styles: {
         normal:
           `h-48 md:h-56  col-span-2 row-start-4 lg:row-start-auto flex justify-center items-center rounded-2xl  ${colorScheme.shadow}`,
-        expanded: "h-full col-span-full row-start-5 rounded-lg my-8",
+        expanded: "h-full col-span-full  rounded-lg my-8",
       },
     },
     {

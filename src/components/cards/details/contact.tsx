@@ -9,6 +9,7 @@ import {
   Loader2,
   X,
 } from "lucide-react";
+import { useExpanded } from "@/contexts/expand-provider";
 
 const deals = [
   {
@@ -46,7 +47,7 @@ const deals = [
 
 const API_BASE_URL = "https://api.jiallama.edu.pk/portfolio";
 
-export default function ContactDetails({ index = 0 }) {
+export default function ContactDetails({ index }: { index: number }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -64,10 +65,12 @@ export default function ContactDetails({ index = 0 }) {
   });
   const [feedbackLoading, setFeedbackLoading] = useState(false);
   const [showFeedbackMessage, setShowFeedbackMessage] = useState(false);
-  const expanded = false;
+  const { expanded, collapse } = useExpanded();
 
   // Load feedback on component mount
   useEffect(() => {
+    console.log(index);
+
     loadFeedback();
   }, []);
 
@@ -83,10 +86,7 @@ export default function ContactDetails({ index = 0 }) {
     }
   };
 
-  const handleInputChange = (
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    e
-  ) => {
+  const handleInputChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -201,9 +201,7 @@ export default function ContactDetails({ index = 0 }) {
     }
   };
 
-  const collapse = (index: number) => {
-    console.log("Collapse section:", index);
-  };
+
 
   return (
     <section className="bg-neutral-50 text-neutral-900 dark:bg-black dark:text-neutral-100">
@@ -351,9 +349,9 @@ export default function ContactDetails({ index = 0 }) {
                 {feedbackLoading && (
                   <Loader2 className="w-4 h-4 animate-spin text-neutral-400" />
                 )}
-                    <h4 className="text-xs   text-neutral-700 dark:text-neutral-400">
-                Feel free to write feedback with your amazing suggestions.
-              </h4>
+                <h4 className="text-xs   text-neutral-700 dark:text-neutral-400">
+                  Feel free to write feedback with your amazing suggestions.
+                </h4>
               </div>
             </div>
           </div>
