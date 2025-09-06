@@ -38,16 +38,17 @@ export default function EducationDetails({ index }: { index: number }) {
   };
 
   return (
-    <section className=" py-16  text-neutral-900 dark:bg-neutral-950 dark:text-white transition-colors">
-      <div className="container  mx-auto px-6 space-y-10">
+    <section className="  text-neutral-900 dark:bg-neutral-950 dark:text-white transition-colors ">
+      <div className="container space-y-8  ">
         {/* Header */}
-        <div>
+        <div className="">
           <div className="flex gap-4">
             <h2 className="text-3xl font-semibold mb-2 flex justify-between w-full items-center">
               <span>Education</span>
               {!expanded && (
                 <span
-                  onClick={() => {
+                className="text-neutral-400 dark:text-neutral-500 dark:hover:text-neutral-200 hover:text-neutral-800"
+                onClick={() => {
                     collapse(index);
                   }}
                 >
@@ -56,7 +57,7 @@ export default function EducationDetails({ index }: { index: number }) {
               )}
             </h2>
           </div>
-          <p className="text-neutral-600 dark:text-neutral-400 text-sm">
+          <p className="text-neutral-600 dark:text-neutral-400 text-xs">
             Academic background, specialization, and key achievements
           </p>
         </div>

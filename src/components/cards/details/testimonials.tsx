@@ -26,19 +26,21 @@ export default function TestimonialsDetails({ index }: { index: number }) {
   const { collapse, expanded } = useExpanded();
 
   return (
-    <section className="py-16 bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-white transition-colors">
-      <div className="container mx-auto px-6">
+    <section className=" bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-white transition-colors">
+      <div className="container space-y-10 ">
         {/* Heading */}
-        <div className="py-10">
+        <div className="">
           <div className="flex items-center justify-between mb-2">
             <h2 className="text-3xl font-semibold">Testimonials</h2>
             {!expanded && (
               <button
+              className="text-neutral-400 dark:text-neutral-500 dark:hover:text-neutral-200 hover:text-neutral-800"
+             
                 onClick={() => collapse(index)}
-                className="p-2 rounded-md hover:bg-neutral-200 dark:hover:bg-neutral-800 transition"
+                // className="p-2 rounded-md hover:bg-neutral-200 dark:hover:bg-neutral-800 transition"
                 title="Collapse"
               >
-                <Minimize2 className="h-5 w-5 text-neutral-600 dark:text-neutral-300" />
+                <Minimize2  />
               </button>
             )}
           </div>

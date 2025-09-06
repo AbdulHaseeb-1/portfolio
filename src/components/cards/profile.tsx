@@ -22,7 +22,7 @@ export default function ProfileCard({
   name = "Abdul Haseeb",
   role = "Full Stack Engineer",
   tagline = "Ideas → Systems → Impact",
-  image = "/image-2.png",
+  image = "/profile.jpg",
 }: ProfileCardProps) {
   const { collapse } = useExpanded();
   return (
@@ -32,7 +32,7 @@ export default function ProfileCard({
       transition={{ duration: 0.4 }}
       onClick={() => collapse(index)}
       className={clsx(
-        "relative h-full flex flex-col lg:flex-row lg:items-center gap-6 w-full p-5 rounded-2xl overflow-hidden"
+        "relative h-full flex flex-col lg:flex-row lg:items-center gap-6 w-full p-4 rounded-2xl overflow-hidden"
       )}
     >
       {/* Avatar Trigger */}

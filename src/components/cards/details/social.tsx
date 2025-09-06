@@ -2,6 +2,7 @@ import { Linkedin, Instagram, Mail, Minimize2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { FaWhatsapp, FaDiscord } from "react-icons/fa";
 import { useExpanded } from "@/contexts/expand-provider";
+import { colorScheme } from "@/lib/styles";
 
 const socials = [
   {
@@ -44,14 +45,16 @@ const socials = [
 export default function SocialDetails({ index }: { index: number }) {
   const { collapse, expanded } = useExpanded();
   return (
-    <section className="py-12  bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-white transition-colors">
-      <div className="container   px-6 space-y-10">
+    <section className="  bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-white transition-colors">
+      <div className="container space-y-10 ">
         <div>
           <div className="flex gap-4">
             <h2 className="text-3xl font-semibold mb-2 flex justify-between w-full items-center">
               <span>Social</span>
               {!expanded && (
                 <span
+                className="text-neutral-400 dark:text-neutral-500 dark:hover:text-neutral-200 hover:text-neutral-800"
+                
                   onClick={() => {
                     collapse(index);
                   }}
@@ -85,7 +88,7 @@ export default function SocialDetails({ index }: { index: number }) {
                 className={`flex items-center gap-4 p-4 rounded-xl border 
                 border-neutral-200 dark:border-neutral-800 
                 bg-white/70 dark:bg-neutral-900/50 
-                backdrop-blur-sm transition ${s.color}`}
+                backdrop-blur-sm transition ${colorScheme.shadow} dark:hover:border-white hover:border-black `}
               >
                 <Icon className="w-6 h-6" />
                 <div>

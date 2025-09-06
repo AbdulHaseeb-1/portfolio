@@ -74,8 +74,8 @@ export default function SkillSetDetails({ index }: { index: number }) {
   ];
 
   return (
-    <div className="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-white transition-colors px-6">
-      <div className=" space-y-16">
+    <div className="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-white transition-colors ">
+      <div className=" space-y-10">
         {/* Header */}
     
                <div>
@@ -84,6 +84,8 @@ export default function SkillSetDetails({ index }: { index: number }) {
               <span>My Skills</span>
           {!expanded && (
                 <span
+                className="text-neutral-400 dark:text-neutral-500 dark:hover:text-neutral-200 hover:text-neutral-800"
+                
                   onClick={() => {
                     collapse(index);
                   }}

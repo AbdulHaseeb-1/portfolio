@@ -1,5 +1,4 @@
 import { useExpanded } from "@/contexts/expand-provider";
-import { colorScheme } from "@/lib/styles";
 import clsx from "clsx";
 import { useState, useEffect } from "react";
 
@@ -91,8 +90,7 @@ export default function StatsCard({ index }: { index: number }) {
       onClick={() => collapse(index)}
       className={clsx(
         "relative rounded-xl p-4 sm:p-6 text-white flex flex-col gap-4 w-full h-full transition-all duration-300 hover:shadow-2xl  border  hover:border-neutral-700/50 overflow-hidden group",
-        colorScheme.dark.background,
-        colorScheme.light.background
+    
       )}
     >
       <div className="relative z-10 flex-1 grid grid-cols-2 md:grid-cols-4 gap-3">

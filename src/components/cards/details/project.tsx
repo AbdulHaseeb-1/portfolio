@@ -34,13 +34,15 @@ export default function ProjectDetails({ index }: { index: number }) {
   ];
 
   return (
-    <section className="py-16 px-6 bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-white transition-colors">
-      <div className="mb-12 ">
+    <section className=" space-y-10  bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-white transition-colors">
+      <div className=" ">
         <div className="flex gap-4">
           <h2 className="text-3xl font-semibold mb-2 flex justify-between w-full items-center">
             <span> Projects</span>
           {!expanded && (
                 <span
+                className="text-neutral-400 dark:text-neutral-500 dark:hover:text-neutral-200 hover:text-neutral-800"
+              
                   onClick={() => {
                     collapse(index);
                   }}

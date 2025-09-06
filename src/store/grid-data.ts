@@ -10,9 +10,8 @@ export default {
         expanded: "ProfileCard",
       },
       styles: {
-        normal:
-          `h-full border  rounded-lg col-span-2 row-span-2 flex justify-center items-center ${colorScheme.dark.background} ${colorScheme.light.background}`,
-        expanded: `w-full col-span-full bg-transparent row-start-1 `,
+        normal: `h-full border rounded-lg col-span-2 lg:row-span-2 flex justify-center items-center ${colorScheme.dark.background} ${colorScheme.light.background}`,
+        expanded: `w-full col-span-full bg-transparent row-strat-auto `,
       },
     },
     {
@@ -23,9 +22,9 @@ export default {
         expanded: "MessageCard",
       },
       styles: {
-        normal: ` rounded-lg col-span-2 flex justify-center items-center  ${colorScheme.dark.background} ${colorScheme.light.background}`,
-        expanded: "col-span-full ",
-      },
+        normal: ` rounded-lg col-span-2 flex justify-center items-center border   ${colorScheme.dark.background} ${colorScheme.light.background} ${colorScheme.shadow}`,
+        expanded: "col-span-full my-0 border rounded-full  ",
+      }
     },
     {
       clickable: true,
@@ -37,7 +36,7 @@ export default {
       styles: {
         normal:
           "h-48 md:h-56  col-span-1 flex justify-center items-center rounded-xl ",
-        expanded: "h-full col-span-full   bg-transparent",
+        expanded: "h-full col-span-full my-8 bg-transparent",
       },
     },
     {
@@ -51,7 +50,7 @@ export default {
         normal:
           "h-48 md:h-56  col-span-1 flex justify-center items-center rounded-lg",
         expanded:
-          "h-full col-span-full row-start-auto lg:row-start-auto  rounded-lg",
+          "h-full col-span-full row-strat-auto my-8 lg:row-start-auto  rounded-lg",
       },
     },
     {
@@ -64,7 +63,7 @@ export default {
       styles: {
         normal:
           "h-48 md:h-56  col-span-1 flex justify-center items-center rounded-lg",
-        expanded: "h-full col-span-full  rounded-lg",
+        expanded: "h-full col-span-full my-8 rounded-lg",
       },
     },
     {
@@ -76,8 +75,8 @@ export default {
       },
       styles: {
         normal:
-          "h-48 md:h-56  col-span-2 row-start-5 lg:row-start-auto md:row-start-auto flex justify-center items-center rounded-2xl",
-        expanded: "h-full col-span-full row-start-4 lg:row-start-5 rounded-lg",
+          "h-48 md:h-56  col-span-2 row-start-4 lg:row-start-auto flex justify-center items-center rounded-2xl",
+        expanded: "h-full col-span-full row-start-5 rounded-lg my-8",
       },
     },
     {
@@ -90,7 +89,8 @@ export default {
       styles: {
         normal:
           "h-48 md:h-56 rounded-2xl col-span-1 flex justify-center items-center rounded-lg",
-        expanded: "h-full col-span-full row-start-8 lg:row-start-8  rounded-lg",
+        expanded:
+          "h-full col-span-full row-strat-auto lg:row-strat-auto  rounded-lg my-8",
       },
     },
     {
@@ -101,9 +101,9 @@ export default {
         expanded: "StatsCard",
       },
       styles: {
-        normal:
-          "h-full md:h-56 rounded-2xl col-span-2 flex justify-center items-center rounded-lg",
-        expanded: "h-full col-span-full row-start-auto  rounded-lg",
+        normal: `h-full md:h-56 rounded-2xl col-span-2 flex justify-center items-center rounded-lg ${colorScheme.dark.background} ${colorScheme.light.background}`,
+        expanded:
+          "h-full col-span-full row-start-auto bg-transparent  rounded-lg",
       },
     },
     {
@@ -116,7 +116,7 @@ export default {
       styles: {
         normal:
           "h-48 md:h-56 rounded-2xl  col-span-2 flex justify-center items-center rounded-lg",
-        expanded: "h-full col-span-full  rounded-lg",
+        expanded: "h-full col-span-full row-start-auto rounded-lg  my-8",
       },
     },
   ],
