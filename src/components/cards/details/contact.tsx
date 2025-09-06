@@ -44,7 +44,7 @@ const deals = [
   },
 ];
 
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL = "https://api.jiallama.edu.pk/portfolio/";
 
 export default function ContactDetails({ index = 0 }) {
   const [formData, setFormData] = useState({
