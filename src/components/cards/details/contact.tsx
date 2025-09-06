@@ -206,7 +206,7 @@ export default function ContactDetails({ index = 0 }) {
   };
 
   return (
-    <section className="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+    <section className="bg-neutral-50 text-neutral-900 dark:bg-black dark:text-neutral-100">
       <div className="container space-y-10 p-6">
         {/* Heading */}
         <div className="">
@@ -319,7 +319,7 @@ export default function ContactDetails({ index = 0 }) {
             {/* Feedback Section */}
             <div className="mt-8 p-4 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900/50">
               <h4 className="text-sm font-medium mb-3 text-neutral-700 dark:text-neutral-300">
-                How helpful is this pricing information?
+                What you think about this ?
               </h4>
               <div className="flex items-center gap-4">
                 <button
@@ -351,6 +351,9 @@ export default function ContactDetails({ index = 0 }) {
                 {feedbackLoading && (
                   <Loader2 className="w-4 h-4 animate-spin text-neutral-400" />
                 )}
+                    <h4 className="text-xs   text-neutral-700 dark:text-neutral-400">
+                Feel free to write feedback with your amazing suggestions.
+              </h4>
               </div>
             </div>
           </div>
@@ -405,6 +408,7 @@ export default function ContactDetails({ index = 0 }) {
                   <option value="Growth Package">Growth Package</option>
                   <option value="Consultation">Consultation</option>
                   <option value="Custom Project">Custom Project</option>
+                  <option value="Custom Project">Feedback</option>
                 </select>
               </div>
 
@@ -455,10 +459,10 @@ export default function ContactDetails({ index = 0 }) {
             </div>
 
             {/* API Status Indicator */}
-            <div className="mt-4 flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400">
+            {/* <div className="mt-4 flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
               <span>Backend connected</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

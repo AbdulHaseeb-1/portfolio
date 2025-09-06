@@ -38,7 +38,7 @@ export default function EducationDetails({ index }: { index: number }) {
   };
 
   return (
-    <section className="  text-neutral-900 dark:bg-neutral-950 dark:text-white transition-colors ">
+    <section className="  text-neutral-900 dark:bg-black dark:text-white transition-colors ">
       <div className="container space-y-8  ">
         {/* Header */}
         <div className="">

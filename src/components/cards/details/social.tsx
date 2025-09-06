@@ -1,41 +1,41 @@
 import { Linkedin, Instagram, Mail, Minimize2 } from "lucide-react";
 import { motion } from "framer-motion";
-import { FaWhatsapp, FaDiscord } from "react-icons/fa";
+import { FaWhatsapp,} from "react-icons/fa";
 import { useExpanded } from "@/contexts/expand-provider";
 import { colorScheme } from "@/lib/styles";
 
 const socials = [
   {
     name: "WhatsApp",
-    url: "https://wa.me/923001234567",
+    url: "https://wa.me/923441440004",
     icon: FaWhatsapp,
     color:
       "hover:bg-green-500/10 hover:text-green-600 dark:hover:text-green-400 hover:shadow-[0_0_15px_rgba(34,197,94,0.4)]",
   },
   {
     name: "Instagram",
-    url: "https://instagram.com/yourusername",
+    url: "https://instagram.com/code_words_1/",
     icon: Instagram,
     color:
       "hover:bg-pink-500/10 hover:text-pink-600 dark:hover:text-pink-400 hover:shadow-[0_0_15px_rgba(236,72,153,0.4)]",
   },
-  {
-    name: "Discord",
-    url: "https://discord.gg/yourinvite",
-    icon: FaDiscord,
-    color:
-      "hover:bg-indigo-500/10 hover:text-indigo-600 dark:hover:text-indigo-400 hover:shadow-[0_0_15px_rgba(99,102,241,0.4)]",
-  },
+  // {
+  //   name: "Discord",
+  //   url: "https://discord.gg/yourinvite",
+  //   icon: FaDiscord,
+  //   color:
+  //     "hover:bg-indigo-500/10 hover:text-indigo-600 dark:hover:text-indigo-400 hover:shadow-[0_0_15px_rgba(99,102,241,0.4)]",
+  // },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/yourusername",
+    url: "https://www.linkedin.com/in/abdul-haseeb-325255265",
     icon: Linkedin,
     color:
       "hover:bg-blue-500/10 hover:text-blue-600 dark:hover:text-blue-400 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]",
   },
   {
     name: "Email",
-    url: "mailto:youremail@example.com",
+    url: "mailto:a.official.haseeb@gmail.com",
     icon: Mail,
     color:
       "hover:bg-amber-500/10 hover:text-amber-600 dark:hover:text-amber-400 hover:shadow-[0_0_15px_rgba(251,191,36,0.4)]",
@@ -45,7 +45,7 @@ const socials = [
 export default function SocialDetails({ index }: { index: number }) {
   const { collapse, expanded } = useExpanded();
   return (
-    <section className="  bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-white transition-colors">
+    <section className="  bg-neutral-50 text-neutral-900 dark:bg-black dark:text-white transition-colors">
       <div className="container space-y-10 ">
         <div>
           <div className="flex gap-4">

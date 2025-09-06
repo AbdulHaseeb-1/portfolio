@@ -12,10 +12,10 @@ type Stats = {
 export default function StatsCard({ index }: { index: number }) {
   const { collapse } = useExpanded();
   const finalStats: Stats = {
-    experience: 3,
-    projects: 25,
-    clients: 12,
-    satisfaction: 98,
+    experience: 1,
+    projects: 5,
+    clients: 3,
+    satisfaction: 99,
   };
   const [animatedStats, setAnimatedStats] = useState<Stats>(finalStats);
 

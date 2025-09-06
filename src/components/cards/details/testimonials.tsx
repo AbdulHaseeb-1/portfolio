@@ -4,29 +4,29 @@ import { Minimize2 } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "Haseeb transformed our outdated infrastructure into a scalable system. Reliable and efficient.",
-    name: "Ayesha Khan",
-    role: "CTO, TechWave",
+      "To be taken...",
+    name: "Rasheed Ahmed",
+    role: "Client",
   },
-  {
-    quote:
-      "His DevOps pipelines saved us countless deployment headaches. A real game changer.",
-    name: "Ali Raza",
-    role: "Engineering Manager, Cloudify",
-  },
-  {
-    quote:
-      "Frontend to backend, he handles it all with clarity and speed. Highly recommended.",
-    name: "Sara Malik",
-    role: "Founder, StartupHub",
-  },
+  // {
+  //   quote:
+  //     "His DevOps pipelines saved us countless deployment headaches. A real game changer.",
+  //   name: "Ali Raza",
+  //   role: "Engineering Manager, Cloudify",
+  // },
+  // {
+  //   quote:
+  //     "Frontend to backend, he handles it all with clarity and speed. Highly recommended.",
+  //   name: "Sara Malik",
+  //   role: "Founder, StartupHub",
+  // },
 ];
 
 export default function TestimonialsDetails({ index }: { index: number }) {
   const { collapse, expanded } = useExpanded();
 
   return (
-    <section className=" bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-white transition-colors">
+    <section className=" bg-neutral-50 text-neutral-900 dark:bg-black dark:text-white transition-colors">
       <div className="container space-y-10 ">
         {/* Heading */}
         <div className="">

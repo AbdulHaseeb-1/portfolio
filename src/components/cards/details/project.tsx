@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useExpanded } from "@/contexts/expand-provider";
 
 export default function ProjectDetails({ index }: { index: number }) {
-  const { collapse,expanded } = useExpanded();
+  const { collapse, expanded } = useExpanded();
 
   const projectsData = [
     {
@@ -12,7 +12,7 @@ export default function ProjectDetails({ index }: { index: number }) {
       description:
         "Full-stack e-commerce solution with inventory, payments, and admin dashboard.",
       category: "Full Stack",
-      technologies: ["React", "Next.js", "MySQL", "Stripe"],
+      technologies: ["React", "Next.js", "MySQL", "Stripe", "Typescript"],
       status: "On Github",
       links: {
         github: "https://github.com/user/ecommerce",
@@ -20,39 +20,55 @@ export default function ProjectDetails({ index }: { index: number }) {
     },
     {
       id: 2,
-      title: "Task Management App",
+      title: "Rusty UI (Web UI Library) [Under Development]",
       description:
-        "Collaborative project management tool with real-time updates and analytics.",
-      category: "Web App",
-      technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
+        "A reusable, efficient UI component library designed to integrate with modern frameworks.",
+      category: "UI Library",
+      technologies: ["React","Next Js" ,"Tailwind", "TypeScript"],
       status: "In Development",
       links: {
-        live: "https://tasks.example.com",
-        github: "https://github.com/user/taskapp",
+        github: "https://github.com/AbdulHaseeb-1/rusty-ui",
+      },
+    },
+    {
+      id: 4,
+      title: "Portfolio Website",
+      description: "Modern developer portfolio site with modern design",
+      category: "Portfolio",
+      technologies: ["Next.js", "React", "Tailwind", "Framer Motion"],
+      status: "On Github",
+      links: {
+        github: "https://github.com/AbdulHaseeb-1/candle-king",
+      },
+    },
+    {
+      id: 5,
+      title: "Madrissa Website",
+      description:
+        "Educational platform for a madrissa featuring fatwas and bayanat",
+      category: "Web App",
+      technologies: ["Next.js", "React", "Tailwind", "Node Js", "MongoDB"],
+      status: "Live",
+      links: {
+        live: "https://jiallama.edu.pk",
       },
     },
   ];
 
   return (
-    <section className=" space-y-10  bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-white transition-colors">
-      <div className=" ">
+    <section className="space-y-10  text-black dark:bg-black dark:text-white transition-colors">
+      <div>
         <div className="flex gap-4">
           <h2 className="text-3xl font-semibold mb-2 flex justify-between w-full items-center">
-            <span> Projects</span>
-          {!expanded && (
-                <span
-                className="text-neutral-400 dark:text-neutral-500 dark:hover:text-neutral-200 hover:text-neutral-800"
-              
-                  onClick={() => {
-                    collapse(index);
-                  }}
-                >
-                  <Minimize2 />
-                </span>
-              )}
+            <span>Projects</span>
+            {!expanded && (
+              <span className="cursor-pointer" onClick={() => collapse(index)}>
+                <Minimize2 />
+              </span>
+            )}
           </h2>
         </div>
-        <p className="text-neutral-600 dark:text-neutral-400 text-sm">
+        <p className="text-sm">
           Selected work showcasing technical skills and creativity
         </p>
       </div>
@@ -64,14 +80,14 @@ export default function ProjectDetails({ index }: { index: number }) {
             key={project.id}
             whileHover={{ y: -3 }}
             transition={{ type: "spring", stiffness: 200 }}
-            className="p-6 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/40 hover:border-amber-400/40 transition-colors"
+            className="p-6 rounded-xl border border-neutral-300 dark:border-neutral-700"
           >
             {/* Category + Status */}
             <div className="flex items-center gap-2 mb-3">
-              <span className="px-2 py-0.5 text-[11px] uppercase tracking-wide bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 rounded-md">
+              <span className="px-2 py-0.5 text-[11px] uppercase tracking-wide rounded-md border border-neutral-300 dark:border-neutral-700">
                 {project.category}
               </span>
-              <span className="px-2 py-0.5 text-[11px] rounded-md bg-amber-500/10 text-amber-600 dark:bg-amber-400/10 dark:text-amber-400">
+              <span className="px-2 py-0.5 text-[11px] rounded-md border border-neutral-300 dark:border-neutral-700">
                 {project.status}
               </span>
             </div>
@@ -80,16 +96,14 @@ export default function ProjectDetails({ index }: { index: number }) {
             <h3 className="text-lg font-medium mb-2">{project.title}</h3>
 
             {/* Description */}
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
-              {project.description}
-            </p>
+            <p className="text-sm mb-4">{project.description}</p>
 
             {/* Tech stack */}
             <div className="flex flex-wrap gap-2 mb-4">
               {project.technologies.map((tech, i) => (
                 <span
                   key={i}
-                  className="px-2 py-1 bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 text-xs rounded-md"
+                  className="px-2 py-1 border border-neutral-300 dark:border-neutral-700 text-xs rounded-md"
                 >
                   {tech}
                 </span>
@@ -97,11 +111,11 @@ export default function ProjectDetails({ index }: { index: number }) {
             </div>
 
             {/* Links */}
-            <div className="flex items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
+            <div className="flex items-center gap-4 text-sm">
               {project.links.live && (
                 <a
                   href={project.links.live}
-                  className="flex items-center gap-1 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+                  className="flex items-center gap-1 underline"
                 >
                   <ExternalLink className="h-4 w-4" /> Live
                 </a>
@@ -109,7 +123,7 @@ export default function ProjectDetails({ index }: { index: number }) {
               {project.links.github && (
                 <a
                   href={project.links.github}
-                  className="flex items-center gap-1 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+                  className="flex items-center gap-1 underline"
                 >
                   <Github className="h-4 w-4" /> Code
                 </a>

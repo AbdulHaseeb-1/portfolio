@@ -74,7 +74,7 @@ export default function SkillSetDetails({ index }: { index: number }) {
   ];
 
   return (
-    <div className="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-white transition-colors ">
+    <div className="bg-neutral-50 text-neutral-900 dark:bg-black dark:text-white transition-colors ">
       <div className=" space-y-10">
         {/* Header */}
     
