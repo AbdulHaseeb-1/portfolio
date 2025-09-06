@@ -44,8 +44,8 @@ export default function MainGrid() {
   };
 
   return (
-    <div className="max-w-7xl m-auto py-3 px-2 md:px-4 flex flex-col gap-2 ">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 w-full px-4 ">
+    <div className="max-w-7xl m-auto py-3 px-4 md:px-4 flex flex-col gap-2 ">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 w-full  ">
         {Items.grid.map((item, index: number) => {
           const isActive = expanded ? true : activeIndices.includes(index);
 

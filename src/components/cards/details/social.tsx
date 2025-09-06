@@ -93,7 +93,7 @@ export default function SocialDetails({ index }: { index: number }) {
                 <Icon className="w-6 h-6" />
                 <div>
                   <p className="font-medium">{s.name}</p>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400 truncate">
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 truncate text-wrap">
                     {s.url}
                   </p>
                 </div>
