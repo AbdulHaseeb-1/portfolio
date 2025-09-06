@@ -1,15 +1,16 @@
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin,  Mail } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   const socials = [
-    { icon: Github, href: "https://github.com/yourname", label: "GitHub" },
+    { icon: Github, href: "https://github.com/AbdulHaseeb-1", label: "GitHub" },
     {
       icon: Linkedin,
-      href: "https://linkedin.com/in/yourname",
+      href: "https://www.linkedin.com/in/abdul-haseeb-325255265",
       label: "LinkedIn",
     },
-    { icon: Twitter, href: "https://twitter.com/yourname", label: "Twitter" },
-    { icon: Mail, href: "mailto:your@email.com", label: "Email" },
+    { icon: FaWhatsapp, href: "https://wa.me/923441440004", label: "WhatsApp" },
+    { icon: Mail, href: "mailto:a.official.haseeb@gmail.com", label: "Email" },
   ];
 
   return (
